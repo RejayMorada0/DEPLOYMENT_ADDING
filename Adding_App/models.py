@@ -45,8 +45,8 @@ class all_subjects(models.Model):
 #https://docs.djangoproject.com/en/dev/ref/models/fields/#django.db.models.ForeignKey.related_name
 #https://stackoverflow.com/questions/2606194/django-error-message-add-a-related-name-argument-to-the-definition
 class student_request(models.Model):
-    stud_id = models.IntegerField(unique=True, verbose_name='stud_id')
-    sub_code = models.CharField(max_length=100, unique=True)
+    stud_id = models.IntegerField(verbose_name='stud_id')
+    sub_code = models.CharField(max_length=100)
     subject = models.CharField(max_length=100)
     grades = models.PositiveIntegerField()
     remarks = models.CharField(max_length=100)
