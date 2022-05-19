@@ -47,18 +47,18 @@
                 </div>
 
                 <div class="col-md-4 mb-3">
-                    <label for="stud_id_id">Student ID</label>
-                    <select name="stud_id_id" class="custom-select" id="stud_id_id">
+                    <label for="stud_id">Student ID</label>
+                    <select name="stud_id" class="custom-select" id="stud_id">
                     {% for data in data %}
-                  <option  value="{{data.stud_id_id}}">{{data.stud_id_id}}</option>{% endfor %}
+                  <option  value="{{data.stud_id}}">{{data.stud_id}}</option>{% endfor %}
                 </select>
                 </div>
 
                 <div class="col-md-4 mb-3">
-                    <label for="sub_code_id">Subject Code</label>
-                    <select name="sub_code_id" class="custom-select" id="sub_code_id" required>
+                    <label for="sub_code">Subject Code</label>
+                    <select name="sub_code" class="custom-select" id="sub_code" required>
                   {% for data in data %}
-                  <option value="{{data.sub_code_id}}">{{data.subject}}</option>{% endfor %}
+                  <option value="{{data.sub_code}}">{{data.subject}}</option>{% endfor %}
                 </select>
                 </div>
 
@@ -79,7 +79,7 @@
                 </div>
                 <div class="button1">
                     <button id="logoutbutton">Update</button> {% for data in data %}
-                    <a class="nav-link" href="/checking/{{data.stud_id_id}}" id="logoutbutton">Cancel</a>{% endfor %}
+                    <a class="nav-link" href="/checking/{{data.stud_id}}" id="logoutbutton">Cancel</a>{% endfor %}
                 </div>
         </form>
 

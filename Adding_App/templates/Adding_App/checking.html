@@ -140,8 +140,8 @@
                             {% csrf_token %}
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
-                                    <label for="stud_id_id">Student ID</label>
-                                    <select name="stud_id_id" class="custom-select" id="stud_id_id">
+                                    <label for="stud_id">Student ID</label>
+                                    <select name="stud_id" class="custom-select" id="stud_id">
                                   {% for ids in ids %}
                                   <option value="{{ids.id}}">{{ids.id}}</option>{% endfor %}
                                 </select>
@@ -149,8 +149,8 @@
 
 
                                 <div class="col-md-4 mb-3">
-                                    <label for="sub_code_id">Subject Code</label>
-                                    <select name="sub_code_id" class="custom-select" id="sub_code_id" required>
+                                    <label for="sub_code">Subject Code</label>
+                                    <select name="sub_code" class="custom-select" id="sub_code" required>
                                   <option selected disabled value="">Choose...</option>
                                   {% for subject in subject %}
                                   <option value="{{subject.id}}">{{subject.sub_code}}</option>{% endfor %}

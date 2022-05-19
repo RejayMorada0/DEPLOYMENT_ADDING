@@ -23,7 +23,7 @@ class registration(AbstractUser):
         ('DH', 'Department Head'),
         ('PIC', 'Person-in-charge'),
     ]
-
+    
     section = models.CharField(max_length=30, choices= section, verbose_name='section')
     stud_id = models.IntegerField(unique=True, verbose_name='stud_id')
     stud_stats = models.CharField(max_length=30, default ='Processing')
@@ -45,8 +45,8 @@ class all_subjects(models.Model):
 #https://docs.djangoproject.com/en/dev/ref/models/fields/#django.db.models.ForeignKey.related_name
 #https://stackoverflow.com/questions/2606194/django-error-message-add-a-related-name-argument-to-the-definition
 class student_request(models.Model):
-    stud_id = models.ForeignKey(all_subjects, on_delete=models.CASCADE, related_name='stud_id', verbose_name = 'stud_id') 
-    sub_code = models.ForeignKey(all_subjects, on_delete=models.CASCADE, related_name='subject', verbose_name = 'sub_code')
+    stud_id = models.IntegerField(unique=True, verbose_name='stud_id')
+    sub_code = models.CharField(max_length=100, unique=True)
     subject = models.CharField(max_length=100)
     grades = models.PositiveIntegerField()
     remarks = models.CharField(max_length=100)
