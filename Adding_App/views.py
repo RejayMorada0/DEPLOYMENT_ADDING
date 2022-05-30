@@ -16,6 +16,8 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 
 
+
+
 from django.db.models import Q
 
 import mysql.connector as sql
@@ -58,7 +60,15 @@ def userregistration(request):
         form = StudentRegistration(request.POST)
         if form.is_valid():
             form.save()
+            #EDIT FOR EMAIL 5/30/2022
+            subject = 'TUP AOS Registration'
+            message = 'Congratulations! Your account was already created'
+            recipient = form.cleaned_data.get('email')
+            send_mail(subject, 
+              message, settings.EMAIL_HOST_USER, [recipient], fail_silently=False)
+            messages.success(request, 'Success!')
             return redirect ('/index')
+        
     context =  {'form': form }
     return render(request, 'Adding_App/registration.html', context)
 

@@ -35,6 +35,11 @@
         <form method="post">
 
             {% csrf_token %}
+            <!-- EDIT FOR EMAIL 5/30/2022  -->
+            {% if form.errors %}
+            <div class="alert alert-danger">
+                <a class="close" href="#" data-dismiss="alert">×</a> Invalid Credentials
+            </div> {% endif %}
             <div class="formGroup1">
                 <div class="form-group1">
                     {{form.first_name}}

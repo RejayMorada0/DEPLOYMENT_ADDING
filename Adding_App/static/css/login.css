@@ -126,3 +126,10 @@ a.signuplabel {
     display: grid;
     row-gap: 10px;
 }
+
+
+/* EDIT FOR EMAIL 5/30/2022 */
+
+input:invalid {
+    box-shadow: 0 0 5px 1px red;
+}
