@@ -92,6 +92,13 @@ def student(request):
             data.image = request.FILES["image"]
             data.stud_stats = 'Requested'
             data.save()
+            #EDIT FOR EMAIL 5/30/2022
+            subject = 'TUP AOS Request Status'
+            message = 'Your Adding of Subject is already Requested. Wait for the Program-in-charge to process your request and wait for Department Heads approval'
+            recipient = current_user.email
+            send_mail(subject, 
+              message, settings.EMAIL_HOST_USER, [recipient], fail_silently=False)
+            messages.success(request, 'Success!')
             return redirect('/student') 
         return render(request, 'Adding_App/student.html',context)
     return redirect('/index')
@@ -169,6 +176,13 @@ def adminApprove(request):
     ids = registration.objects.get(stud_id=stud_id)
     ids.stud_stats = 'Approved'
     ids.save()
+    #EDIT FOR EMAIL 5/30/2022
+    subject = 'TUP AOS Request Status'
+    message = 'Your Adding of Subject is already Approved.'
+    recipient =  ids.email
+    send_mail(subject, 
+        message, settings.EMAIL_HOST_USER, [recipient], fail_silently=False)
+    messages.success(request, 'Success!')
     print(ids)
     return redirect('/requestapproval/')    
 
@@ -276,7 +290,13 @@ def picRequest(request):
     ids = registration.objects.get(stud_id=stud_id)
     ids.stud_stats = 'Waiting For Approval'
     ids.save()
-    print(ids)
+    #EDIT FOR EMAIL 5/30/2022
+    subject = 'TUP AOS Request Status'
+    message = 'Your Adding of Subject is already processed by the Program-in-charge. You just only need to wait for Department Heads approval'
+    recipient =  ids.email
+    send_mail(subject, 
+        message, settings.EMAIL_HOST_USER, [recipient], fail_silently=False)
+    messages.success(request, 'Success!')
     return redirect('/studentrecords/')
 
 @login_required(login_url='/index')
