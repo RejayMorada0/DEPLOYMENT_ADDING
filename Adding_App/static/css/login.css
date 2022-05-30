@@ -130,6 +130,6 @@ a.signuplabel {
 
 /* EDIT FOR EMAIL 5/30/2022 */
 
-input:invalid {
+.ematpass input:invalid {
     box-shadow: 0 0 5px 1px red;
 }
