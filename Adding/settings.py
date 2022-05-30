@@ -140,3 +140,11 @@ AUTH_USER_MODEL = 'Adding_App.registration'
 MEDIA_URL = '/media/'
 STATICFILES_DIRS=[(os.path.join(BASE_DIR,'static'))]
 MEDIA_ROOT=os.path.join(BASE_DIR,'media/')
+
+
+#EDIT FOR EMAIL 5/30/2022
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'tupaos.cavite@gmail.com'
+EMAIL_HOST_PASSWORD = 'hqubqxsrqfujykzv'

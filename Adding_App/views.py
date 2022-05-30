@@ -9,6 +9,12 @@ from .forms import StudentRegistration, ReceiverRegistration
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
+#EDIT FOR EMAIL 5/30/2022
+from django.contrib import messages
+from django.core.mail import send_mail
+from django.shortcuts import render, redirect
+from django.conf import settings
+
 
 from django.db.models import Q
 
