@@ -50,7 +50,7 @@ def index(request):
             login(request, user)
             return redirect('/pic')
         else:
-            messages.info(request, 'Invalid Credentials')
+           messages.error(request, 'Invalid Credentials')
     return render(request, 'Adding_App/index.html')
 
 #SIGN UP PAGE
@@ -178,7 +178,7 @@ def adminApprove(request):
     ids.save()
     #EDIT FOR EMAIL 5/30/2022
     subject = 'TUP AOS Request Status'
-    message = 'Your Adding of Subject is already Approved.'
+    message = 'Your Adding of Subject is already Approved. You can now download your Adding of Subject Request Form.'
     recipient =  ids.email
     send_mail(subject, 
         message, settings.EMAIL_HOST_USER, [recipient], fail_silently=False)
