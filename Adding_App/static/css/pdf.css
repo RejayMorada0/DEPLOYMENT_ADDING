@@ -1,0 +1,28 @@
+* {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    width: 90%;
+    height: 80%;
+    border: solid 1px black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.header {
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}
+
+.headtitle {
+    margin-left: 5%;
+}
