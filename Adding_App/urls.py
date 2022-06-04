@@ -31,7 +31,7 @@ urlpatterns = [
     #student
     path('student/', views.student, name='student'),
     path('studentRequestNew/', views.studentRequestNew, name='studentRequestNew'),
-    path('pdf/', views.pdf, name='pdf'),
+    path('pdf/<int:id>', views.pdf),
 ]
 
     

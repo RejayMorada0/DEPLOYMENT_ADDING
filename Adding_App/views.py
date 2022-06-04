@@ -112,8 +112,10 @@ def studentRequestNew(request):
         data.save()
         return redirect('/student')
 
-def pdf(request):
-   return render(request, 'Adding_App/pdf.html')
+def pdf(request,id):
+    data = registration.objects.filter(id=id)
+    studentReq = student_request.objects.filter(stud_id=id)
+    return render(request, 'Adding_App/pdf.html', {'data': data, 'studentReq': studentReq})
 
 #HEAD USER INTERFACE
 @login_required(login_url='/index')

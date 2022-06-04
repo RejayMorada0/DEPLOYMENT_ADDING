@@ -78,7 +78,9 @@
                 {% if stud_stats == 'Approved' %}
 
                 <div class="statusCenter">
-                    <a id="pdf" href="{% url 'Adding_App:exportPDF' %}"> <i class="bi bi-download"></i> Download PDF</a>
+                    {% for data in data %}
+                    <a id="pdf" href="/pdf/{{data.id}}"> <i class="bi bi-download"></i> Download PDF</a>
+                    {% endfor %}
                 </div>
 
                 {% endif %}

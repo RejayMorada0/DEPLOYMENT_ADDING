@@ -54,9 +54,11 @@
 
                 <tbody>
                     <tr>
-                        <td>Something</td>
-                        <td>Something</td>
-                        <td>Something</td>
+                        {% for data in data %}
+                        <td>{{data.first_name}} {{data.last_name}}</td>
+                        <td>TUPC- {{data.stud_id}}</td>
+                        <td>{{data.section}}</td>
+                        {% endfor %}
                     </tr>
                 </tbody>
             </table>
@@ -72,42 +74,14 @@
                 </thead>
 
                 <tbody>
+                    {% for studentReq in studentReq %}
                     <tr>
-                        <td>Something</td>
-                        <td>Something</td>
-                        <td>Something</td>
-                        <td>Something</td>
+                        <td>{{studentReq.id}}</td>
+                        <td>{{studentReq.subject}}</td>
+                        <td>{{studentReq.grades}}</td>
+                        <td>{{studentReq.remarks}}</td>
                     </tr>
-                    <tr>
-                        <td>Something</td>
-                        <td>Something</td>
-                        <td>Something</td>
-                        <td>Something</td>
-                    </tr>
-                    <tr>
-                        <td>Something</td>
-                        <td>Something</td>
-                        <td>Something</td>
-                        <td>Something</td>
-                    </tr>
-                    <tr>
-                        <td>Something</td>
-                        <td>Something</td>
-                        <td>Something</td>
-                        <td>Something</td>
-                    </tr>
-                    <tr>
-                        <td>Something</td>
-                        <td>Something</td>
-                        <td>Something</td>
-                        <td>Something</td>
-                    </tr>
-                    <tr>
-                        <td>Something</td>
-                        <td>Something</td>
-                        <td>Something</td>
-                        <td>Something</td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
