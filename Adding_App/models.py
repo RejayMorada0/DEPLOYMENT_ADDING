@@ -9,14 +9,14 @@ from django.contrib.auth.models import AbstractUser
 #Accounts
 class registration(AbstractUser):
     section = [
-        ('1A', 'BET-COET-S-1A'),
-        ('1B', 'BET-COET-NS-1B'),
-        ('2A', 'BET-COET-S-2A'),
-        ('2B', 'BET-COET-NS-2B'),
-        ('3A', 'BET-COET-S-3A'),
-        ('3B', 'BET-COET-NS-3B'),
-        ('4A', 'BET-COET-S-4A'),
-        ('4B', 'BET-COET-NS-4B'),
+        ('BET-COET-S-1A', 'BET-COET-S-1A'),
+        ('BET-COET-NS-1B', 'BET-COET-NS-1B'),
+        ('BET-COET-S-2A', 'BET-COET-S-2A'),
+        ('BET-COET-NS-2B', 'BET-COET-NS-2B'),
+        ('BET-COET-S-3A', 'BET-COET-S-3A'),
+        ('BET-COET-NS-3B', 'BET-COET-NS-3B'),
+        ('BET-COET-S-4A', 'BET-COET-S-4A'),
+        ('BET-COET-NS-4B', 'BET-COET-NS-4B'),
     ]
     userType = [
         ('STDNT', 'Student'),
@@ -48,7 +48,8 @@ class student_request(models.Model):
     stud_id = models.IntegerField(verbose_name='stud_id')
     sub_code = models.CharField(max_length=100)
     subject = models.CharField(max_length=100)
-    grades = models.PositiveIntegerField()
+    grades = models.DecimalField(max_digits=5, decimal_places=2)
     remarks = models.CharField(max_length=100)
+    offer_stats = models.CharField(max_length=100)
 
 

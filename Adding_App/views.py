@@ -239,8 +239,9 @@ def addRemark(request,id):
         sub_code = request.POST.get('sub_code')
         grades = request.POST.get('grades')
         remarks = request.POST.get('remarks')
+        offer_stats = request.POST.get('offer_stats')
         subject = all_subjects.objects.get(id=sub_code)
-        data = student_request.objects.create(stud_id = stud_id, sub_code = sub_code, subject = subject.sub_code, grades = grades, remarks = remarks)
+        data = student_request.objects.create(stud_id = stud_id, sub_code = sub_code, subject = subject.sub_code, grades = grades, remarks = remarks, offer_stats = offer_stats)
         data.save()
         return redirect('/checking/'+ str(id))
 
@@ -257,6 +258,7 @@ def editRemark(request, id):
             data1.sub_code = request.POST.get('sub_code')
             data1.grades = request.POST.get('grades')
             data1.remarks = request.POST.get('remarks')
+            data1.offer_stats = request.POST.get('offer_stats')
             data1.save()
             return redirect('/checking/'+ str(stud_id))
         return render(request, 'Adding_App/editRemark.html', {'data':data} )

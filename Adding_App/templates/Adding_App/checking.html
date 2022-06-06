@@ -84,6 +84,7 @@
                         <th>SUBJECT CODE</th>
                         <th>GRADES</th>
                         <th>REMARKS</th>
+                        <th>OFFER STATUS</th>
                         {% if stud_stats != 'Waiting For Approval' and stud_stats != 'Approved' %}
                         <th>ACTION</th>
                         {% endif %}
@@ -96,6 +97,7 @@
                             <td>{{studentReq.subject}}</td>
                             <td>{{studentReq.grades}}</td>
                             <td>{{studentReq.remarks}}</td>
+                            <td>{{studentReq.offer_stats}}</td>
                             {% if stud_stats != 'Waiting For Approval' and stud_stats != 'Approved' %}
                             <td>
                                 <a href="/editRemark/{{studentReq.id}}">Edit</a>
@@ -158,8 +160,21 @@
                                 </div>
 
                                 <div class="col-md-4 mb-3">
-                                    <label for="grades">Grade</label>
-                                    <input type="number" class="form-control" name="grades" id="grades" required>
+                                    <label for="validationTooltip03">Grades</label>
+                                    <select name="grades" class="custom-select" id="validationTooltip03" required>
+                                  <option selected disabled value="">Choose...</option>
+                                  <option value="1.00">1.00</option>
+                                  <option value="1.25">1.25</option>
+                                  <option value="1.50">1.50</option>
+                                  <option value="1.75">1.75</option>
+                                  <option value="2.00">2.00</option>
+                                  <option value="2.25">2.25</option>
+                                  <option value="2.50">2.50</option>
+                                  <option value="2.75">2.75</option>
+                                  <option value="3.00">3.00</option>
+                                  <option value="5.00">5.00</option>
+                                  
+                                </select>
                                 </div>
 
                                 <div class="col-md-4 mb-3">
@@ -168,7 +183,17 @@
                                   <option selected disabled value="">Choose...</option>
                                   <option value="Passed">Passed</option>
                                   <option value="Failed">Failed</option>
-                                  <option value="To Offer">To Offer</option>
+                                  <option value="To Offer">Drop</option>
+                                  
+                                </select>
+                                </div>
+
+                                <div class="col-md-4 mb-3">
+                                    <label for="validationTooltip03">Offer Status</label>
+                                    <select name="offer_stats" class="custom-select" id="validationTooltip03" required>
+                                  <option selected disabled value="">Choose...</option>
+                                  <option value="Passed">Offer</option>
+                                  <option value="Failed">Not offer</option>
                                   
                                 </select>
                                 </div>
