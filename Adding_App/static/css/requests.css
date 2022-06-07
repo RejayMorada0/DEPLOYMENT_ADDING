@@ -78,6 +78,13 @@ section {
 
 .requesttxt {
     display: grid;
+    width: 100%;
+}
+
+.requesttxt1 {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .requesttxt p {
@@ -96,6 +103,7 @@ section {
 .tableborder {
     border: solid 1px #319AE4;
     border-radius: 10px;
+    margin-top: 20px;
     padding: 20px 20px 20px 20px;
     overflow-x: scroll;
 }

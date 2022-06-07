@@ -78,6 +78,13 @@ section {
 
 .studreqtxt {
     display: grid;
+    width: 100%;
+}
+
+.studreqtxt1 {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .studreqtxt p {
