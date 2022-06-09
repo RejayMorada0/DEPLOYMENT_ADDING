@@ -298,3 +298,12 @@ def studentrecords(request):
 
 
 
+#Email
+def customemail(request):
+    if request.method=='POST':
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        recipient = request.POST.get('email')
+        send_mail(subject, 
+              message, settings.EMAIL_HOST_USER, [recipient], fail_silently=False)
+        return redirect('/pic')

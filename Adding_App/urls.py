@@ -21,6 +21,7 @@ urlpatterns = [
     path('adminApprove/', views.adminApprove, name='adminApprove'),
     #pic
     path('pic/', views.pic, name='pic'),
+    path('customemail', views.customemail, name='customemail'),
     path('checking/<int:id>', views.checking),
     path('checking1/<int:id>', views.checking1),
     path('addRemark/<int:id>', views.addRemark),
