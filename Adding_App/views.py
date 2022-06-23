@@ -23,7 +23,7 @@ from django.db.models import Q
 import mysql.connector as sql
 
 import io
-from reportlab.pdfgen import canvas
+
 
 
 # Create your views here.
